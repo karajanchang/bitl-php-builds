@@ -1,9 +1,6 @@
 name: Build PHP
 
 on:
-  push:
-    paths:
-      - '.github/workflows/build-php.yml'
   workflow_dispatch:
     inputs:
       php_version:
