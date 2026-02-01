@@ -45,3 +45,4 @@ bcmath, calendar, ctype, curl, dom, exif, fileinfo, filter, gd, iconv, intl, mbr
 ## Manifest
 
 The `config/php-versions.json` file contains a machine-readable manifest of all available versions, download URLs, and SHA256 checksums. BitL reads this manifest to download and verify PHP binaries.
+
