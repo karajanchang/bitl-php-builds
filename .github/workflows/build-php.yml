@@ -27,7 +27,10 @@ jobs:
 
       - name: Download spc binary
         run: |
-          curl -fSL "https://dl.static-php.dev/static-php-cli/spc-bin/nightly/spc-macos-$(uname -m)" -o spc
+          SPC_ARCH="$(uname -m)"
+          [[ "${SPC_ARCH}" == "arm64" ]] && SPC_ARCH="aarch64"
+          curl -fSL "https://github.com/crazywhalecc/static-php-cli/releases/download/2.8.1/spc-macos-${SPC_ARCH}.tar.gz" -o spc.tar.gz
+          tar -xzf spc.tar.gz
           chmod +x spc
 
       - name: Download sources

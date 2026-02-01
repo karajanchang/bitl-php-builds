@@ -1,0 +1,64 @@
+[03:46:22] [D] scanning directory phar:///Users/david/Projects/bitl-php-builds/spc/src/SPC/builder/extension
+[03:46:22] [D] scanning directory phar:///Users/david/Projects/bitl-php-builds/spc/src/SPC/doctor/item
+[03:46:22] [D] Setting env: PATH=/Users/david/Projects/bitl-php-builds/buildroot/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/opt/homebrew/bin:/usr/local/bin:/Users/david/Library/pnpm:/Users/david/.local/bin:/usr/bin:/bin
+[03:46:22] [D] Setting env: PATH=/Users/david/Projects/bitl-php-builds/pkgroot/aarch64-darwin/bin:/Users/david/Projects/bitl-php-builds/buildroot/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/opt/homebrew/bin:/usr/local/bin:/Users/david/Library/pnpm:/Users/david/.local/bin:/usr/bin:/bin
+[03:46:22] [D] Setting env: PKG_CONFIG_PATH=/Users/david/Projects/bitl-php-builds/buildroot/lib/pkgconfig
+[03:46:22] [D] Setting env: SPC_CONCURRENCY=10
+[03:46:22] [D] Setting env: SPC_SKIP_PHP_VERSION_CHECK=no
+[03:46:22] [D] Setting env: SPC_SKIP_DOCTOR_CHECK_ITEMS=
+[03:46:22] [D] Setting env: SPC_CMD_VAR_FRANKENPHP_XCADDY_MODULES=--with github.com/dunglas/mercure/caddy --with github.com/dunglas/vulcain/caddy --with github.com/dunglas/caddy-cbrotli
+[03:46:22] [D] Setting env: PHP_BUILD_PROVIDER=static-php-cli 2.8.0
+[03:46:22] [D] Setting env: SPC_TARGET=native-macos
+[03:46:22] [D] Setting env: CC=clang
+[03:46:22] [D] Setting env: CXX=clang++
+[03:46:22] [D] Setting env: AR=ar
+[03:46:22] [D] Setting env: LD=ld
+[03:46:22] [D] Setting env: SPC_DEFAULT_C_FLAGS=--target=arm64-apple-darwin -Os
+[03:46:22] [D] Setting env: SPC_DEFAULT_CXX_FLAGS=--target=arm64-apple-darwin -Os
+[03:46:22] [D] Setting env: SPC_DEFAULT_LD_FLAGS=
+[03:46:22] [D] Setting env: SPC_MICRO_PATCHES=cli_checks,macos_iconv
+[03:46:22] [D] Setting env: SPC_CMD_PREFIX_PHP_BUILDCONF=./buildconf --force
+[03:46:22] [D] Setting env: SPC_CMD_PREFIX_PHP_CONFIGURE=./configure --prefix= --with-valgrind=no --enable-shared=no --enable-static=yes --disable-all --disable-phpdbg
+[03:46:22] [D] Setting env: SPC_CMD_VAR_PHP_EMBED_TYPE=static
+[03:46:22] [D] Setting env: SPC_CMD_VAR_PHP_MAKE_EXTRA_CFLAGS=-g -fstack-protector-strong -fpic -fpie -Werror=unknown-warning-option 
+[03:46:22] [D] Setting env: MACOSX_DEPLOYMENT_TARGET=12.0
+[03:46:22] [D] Setting env: SPC_LINUX_DEFAULT_CC=clang
+[03:46:22] [D] Setting env: SPC_LINUX_DEFAULT_CXX=clang++
+[03:46:22] [D] Setting env: SPC_LINUX_DEFAULT_AR=ar
+[03:46:22] [D] Setting env: SPC_LINUX_DEFAULT_LD=ld
+[03:46:22] [D] Setting env: SPC_TOOLCHAIN=SPC\toolchain\ClangNativeToolchain
+[03:46:22] [D] Setting env: SPC_CMD_VAR_PHP_MAKE_EXTRA_CFLAGS=-g -fstack-protector-strong -fpic -fpie -Werror=unknown-warning-option --target=arm64-apple-darwin -Os
+[03:46:22] [D] Setting env: SPC_SKIP_TOOLCHAIN_CHECK=yes
+[03:46:22] [D] argv: ./spc download --with-php=8.4.3 --for-extensions=bcmath,calendar,ctype,curl,dom,exif,fileinfo,filter,gd,iconv,intl,mbregex,mbstring,mysqlnd,mysqli,opcache,openssl,pcntl,pdo,pdo_mysql,pdo_pgsql,pdo_sqlite,phar,posix,readline,redis,session,simplexml,sockets,sodium,sqlite3,tokenizer,xml,xmlreader,xmlwriter,zip,zlib
+[03:46:22] [D] Setting env: SPC_DOWNLOAD_RETRIES=0
+[03:46:22] [D] Making new directory : /Users/david/Projects/bitl-php-builds/downloads
+[03:46:22] [I] [1/44] Downloading source apcu
+[03:46:22] [D] Lock file does not exist: /Users/david/Projects/bitl-php-builds/downloads/.lock.json, initializing empty lock file.
+[03:46:22] [D] Downloading https://pecl.php.net/get/APCu
+[03:46:22] [D] [PASSTHRU] curl -sfSL  -o "/Users/david/Projects/bitl-php-builds/downloads/apcu.tgz"   "https://pecl.php.net/get/APCu"
+[03:46:24] [D] Locking apcu.tgz
+[03:46:24] [I] [2/44] Downloading source igbinary
+[03:46:24] [D] Downloading https://pecl.php.net/get/igbinary
+[03:46:24] [D] [PASSTHRU] curl -sfSL  -o "/Users/david/Projects/bitl-php-builds/downloads/igbinary.tgz"   "https://pecl.php.net/get/igbinary"
+[03:46:26] [D] Locking igbinary.tgz
+[03:46:26] [I] [3/44] Downloading source msgpack
+[03:46:26] [D] Downloading https://pecl.php.net/get/msgpack
+[03:46:26] [D] [PASSTHRU] curl -sfSL  -o "/Users/david/Projects/bitl-php-builds/downloads/msgpack.tgz"   "https://pecl.php.net/get/msgpack"
+[03:46:28] [D] Locking msgpack.tgz
+[03:46:28] [I] [4/44] Downloading source redis
+[03:46:28] [D] Downloading https://pecl.php.net/get/redis
+[03:46:28] [D] [PASSTHRU] curl -sfSL  -o "/Users/david/Projects/bitl-php-builds/downloads/redis.tgz"   "https://pecl.php.net/get/redis"
+[03:46:30] [D] Locking redis.tgz
+[03:46:30] [I] [5/44] Downloading source ext-zip
+[03:46:30] [D] Downloading https://pecl.php.net/get/zip
+[03:46:30] [D] [PASSTHRU] curl -sfSL  -o "/Users/david/Projects/bitl-php-builds/downloads/ext-zip.tgz"   "https://pecl.php.net/get/zip"
+[03:46:32] [D] Locking ext-zip.tgz
+[03:46:32] [I] [6/44] Downloading source micro
+[03:46:32] [D] cloning micro source
+[03:46:32] [D] [PASSTHRU] git clone -q --quiet --config core.autocrlf=false --branch "master"  --recursive "https://github.com/static-php/phpmicro" "/Users/david/Projects/bitl-php-builds/downloads/micro"
+[03:46:34] [D] Locking git source micro
+[03:46:34] [I] [7/44] Downloading source libiconv
+[03:46:34] [D] finding libiconv source from file list
+[03:46:34] [D] Running command (no output) : curl -sfSL    "https://ftp.gnu.org/gnu/libiconv/"
+[03:46:36] [D] Downloading https://ftp.gnu.org/gnu/libiconv/libiconv-1.18.tar.gz
+[03:46:36] [D] [PASSTHRU] curl -sfSL  -o "/Users/david/Projects/bitl-php-builds/downloads/libiconv-1.18.tar.gz"   "https://ftp.gnu.org/gnu/libiconv/libiconv-1.18.tar.gz"
