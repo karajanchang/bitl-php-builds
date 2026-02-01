@@ -1,0 +1,62 @@
+{
+  "versions": {
+    "8.4": {
+      "latest": "8.4.3",
+      "releases": {
+        "8.4.3": {
+          "arm64": {
+            "url": "https://github.com/karajanchang/bitl-php-builds/releases/download/php-8.4.3/php-8.4.3-macos-arm64.tar.gz",
+            "sha256": "placeholder",
+            "size": 0
+          },
+          "x86_64": {
+            "url": "https://github.com/karajanchang/bitl-php-builds/releases/download/php-8.4.3/php-8.4.3-macos-x86_64.tar.gz",
+            "sha256": "placeholder",
+            "size": 0
+          }
+        }
+      }
+    },
+    "8.3": {
+      "latest": "8.3.15",
+      "releases": {
+        "8.3.15": {
+          "arm64": {
+            "url": "https://github.com/karajanchang/bitl-php-builds/releases/download/php-8.3.15/php-8.3.15-macos-arm64.tar.gz",
+            "sha256": "placeholder",
+            "size": 0
+          },
+          "x86_64": {
+            "url": "https://github.com/karajanchang/bitl-php-builds/releases/download/php-8.3.15/php-8.3.15-macos-x86_64.tar.gz",
+            "sha256": "placeholder",
+            "size": 0
+          }
+        }
+      }
+    },
+    "8.2": {
+      "latest": "8.2.28",
+      "releases": {
+        "8.2.28": {
+          "arm64": {
+            "url": "https://github.com/karajanchang/bitl-php-builds/releases/download/php-8.2.28/php-8.2.28-macos-arm64.tar.gz",
+            "sha256": "placeholder",
+            "size": 0
+          },
+          "x86_64": {
+            "url": "https://github.com/karajanchang/bitl-php-builds/releases/download/php-8.2.28/php-8.2.28-macos-x86_64.tar.gz",
+            "sha256": "placeholder",
+            "size": 0
+          }
+        }
+      }
+    }
+  },
+  "extensions": [
+    "bcmath", "calendar", "ctype", "curl", "dom", "exif", "fileinfo", "filter",
+    "gd", "iconv", "intl", "mbregex", "mbstring", "mysqlnd", "mysqli", "opcache",
+    "openssl", "pcntl", "pdo", "pdo_mysql", "pdo_pgsql", "pdo_sqlite", "phar",
+    "posix", "readline", "redis", "session", "simplexml", "sockets", "sodium",
+    "sqlite3", "tokenizer", "xml", "xmlreader", "xmlwriter", "zip", "zlib"
+  ]
+}

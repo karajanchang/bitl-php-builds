@@ -1,0 +1,59 @@
+name: Build PHP
+
+on:
+  workflow_dispatch:
+    inputs:
+      php_version:
+        description: 'PHP version to build (e.g., 8.4.3)'
+        required: true
+        type: string
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        include:
+          - os: macos-14
+            arch: arm64
+          - os: macos-13
+            arch: x86_64
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download spc binary
+        run: |
+          curl -fSL "https://dl.static-php.dev/static-php-cli/spc-bin/nightly/spc-macos-$(uname -m)" -o spc
+          chmod +x spc
+
+      - name: Download sources
+        run: |
+          EXTENSIONS=$(cat config/extensions.txt | tr '\n' ',' | sed 's/,$//')
+          ./spc download --with-php=${{ inputs.php_version }} --for-extensions="${EXTENSIONS}"
+
+      - name: Build PHP
+        run: |
+          EXTENSIONS=$(cat config/extensions.txt | tr '\n' ',' | sed 's/,$//')
+          ./spc build php-cli php-fpm --build-cli --build-fpm --with-extensions="${EXTENSIONS}"
+
+      - name: Package binaries
+        run: |
+          VERSION="${{ inputs.php_version }}"
+          ARCH="${{ matrix.arch }}"
+          mkdir -p dist/bin
+          cp buildroot/bin/php dist/bin/
+          cp buildroot/bin/php-fpm dist/bin/
+          cd dist
+          tar -czf "php-${VERSION}-macos-${ARCH}.tar.gz" bin/
+          cd ..
+          mv "dist/php-${VERSION}-macos-${ARCH}.tar.gz" .
+
+      - name: Upload to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: "php-${{ inputs.php_version }}"
+          name: "PHP ${{ inputs.php_version }}"
+          files: "php-${{ inputs.php_version }}-macos-${{ matrix.arch }}.tar.gz"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
