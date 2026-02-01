@@ -6,8 +6,8 @@
         "8.4.3": {
           "arm64": {
             "url": "https://github.com/karajanchang/bitl-php-builds/releases/download/php-8.4.3/php-8.4.3-macos-arm64.tar.gz",
-            "sha256": "placeholder",
-            "size": 0
+            "sha256": "6c52f87b1c1ec1653884c2d5667d11f3ea6256f0acb038ec6b04a7bec0f9251e",
+            "size": 50433126
           },
           "x86_64": {
             "url": "https://github.com/karajanchang/bitl-php-builds/releases/download/php-8.4.3/php-8.4.3-macos-x86_64.tar.gz",
