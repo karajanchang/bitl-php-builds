@@ -1,0 +1,9 @@
+spc
+spc.tar.gz
+buildroot/
+downloads/
+source/
+dist/
+log/
+*.tar.gz
+!config/
