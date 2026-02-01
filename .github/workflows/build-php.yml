@@ -41,7 +41,7 @@ jobs:
       - name: Build PHP
         run: |
           EXTENSIONS=$(cat config/extensions.txt | tr '\n' ',' | sed 's/,$//')
-          ./spc build php-cli php-fpm --build-cli --build-fpm --with-extensions="${EXTENSIONS}"
+          ./spc build --build-cli --build-fpm "${EXTENSIONS}"
 
       - name: Package binaries
         run: |

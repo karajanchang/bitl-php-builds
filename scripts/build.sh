@@ -28,7 +28,7 @@ echo "==> Downloading PHP sources and dependencies..."
 
 # Build
 echo "==> Building PHP CLI and FPM..."
-./spc build php-cli php-fpm --build-cli --build-fpm --with-extensions="${EXTENSIONS}"
+./spc build --build-cli --build-fpm "${EXTENSIONS}"
 
 # Package
 echo "==> Packaging..."
