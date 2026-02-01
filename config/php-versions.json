@@ -18,35 +18,25 @@
       }
     },
     "8.3": {
-      "latest": "8.3.15",
+      "latest": "8.3.30",
       "releases": {
-        "8.3.15": {
+        "8.3.30": {
           "arm64": {
-            "url": "https://github.com/karajanchang/bitl-php-builds/releases/download/php-8.3.15/php-8.3.15-macos-arm64.tar.gz",
-            "sha256": "placeholder",
-            "size": 0
-          },
-          "x86_64": {
-            "url": "https://github.com/karajanchang/bitl-php-builds/releases/download/php-8.3.15/php-8.3.15-macos-x86_64.tar.gz",
-            "sha256": "placeholder",
-            "size": 0
+            "url": "https://github.com/karajanchang/bitl-php-builds/releases/download/php-8.3.30/php-8.3.30-macos-arm64.tar.gz",
+            "sha256": "8c68aef0733a0659e0aecfd22293ef79bf3eec093bc09bb03f436ea4f702ea54",
+            "size": 48612012
           }
         }
       }
     },
     "8.2": {
-      "latest": "8.2.28",
+      "latest": "8.2.30",
       "releases": {
-        "8.2.28": {
+        "8.2.30": {
           "arm64": {
-            "url": "https://github.com/karajanchang/bitl-php-builds/releases/download/php-8.2.28/php-8.2.28-macos-arm64.tar.gz",
-            "sha256": "placeholder",
-            "size": 0
-          },
-          "x86_64": {
-            "url": "https://github.com/karajanchang/bitl-php-builds/releases/download/php-8.2.28/php-8.2.28-macos-x86_64.tar.gz",
-            "sha256": "placeholder",
-            "size": 0
+            "url": "https://github.com/karajanchang/bitl-php-builds/releases/download/php-8.2.30/php-8.2.30-macos-arm64.tar.gz",
+            "sha256": "7578e16c626f96655d9aab95e11d4b36ffebdd061544edd86543890e283cf5f3",
+            "size": 48400023
           }
         }
       }
