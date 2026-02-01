@@ -1,12 +1,16 @@
 name: Build PHP
 
 on:
+  push:
+    paths:
+      - '.github/workflows/build-php.yml'
   workflow_dispatch:
     inputs:
       php_version:
         description: 'PHP version to build (e.g., 8.4.3)'
         required: true
         type: string
+        default: '8.4.3'
 
 jobs:
   build:
@@ -18,6 +22,8 @@ jobs:
           - os: macos-13
             arch: x86_64
     runs-on: ${{ matrix.os }}
+    env:
+      PHP_VERSION: ${{ inputs.php_version || '8.4.3' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -30,7 +36,7 @@ jobs:
       - name: Download sources
         run: |
           EXTENSIONS=$(cat config/extensions.txt | tr '\n' ',' | sed 's/,$//')
-          ./spc download --with-php=${{ inputs.php_version }} --for-extensions="${EXTENSIONS}"
+          ./spc download --with-php=${{ env.PHP_VERSION }} --for-extensions="${EXTENSIONS}"
 
       - name: Build PHP
         run: |
@@ -39,7 +45,7 @@ jobs:
 
       - name: Package binaries
         run: |
-          VERSION="${{ inputs.php_version }}"
+          VERSION="${{ env.PHP_VERSION }}"
           ARCH="${{ matrix.arch }}"
           mkdir -p dist/bin
           cp buildroot/bin/php dist/bin/
@@ -52,8 +58,8 @@ jobs:
       - name: Upload to GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: "php-${{ inputs.php_version }}"
-          name: "PHP ${{ inputs.php_version }}"
-          files: "php-${{ inputs.php_version }}-macos-${{ matrix.arch }}.tar.gz"
+          tag_name: "php-${{ env.PHP_VERSION }}"
+          name: "PHP ${{ env.PHP_VERSION }}"
+          files: "php-${{ env.PHP_VERSION }}-macos-${{ matrix.arch }}.tar.gz"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
