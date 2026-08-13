@@ -77,13 +77,20 @@
       }
     },
     "8.3": {
-      "latest": "8.3.30",
+      "latest": "8.3.33",
       "releases": {
         "8.3.30": {
           "arm64": {
             "sha256": "8c68aef0733a0659e0aecfd22293ef79bf3eec093bc09bb03f436ea4f702ea54",
             "size": 48612012,
             "url": "https://github.com/karajanchang/bitl-php-builds/releases/download/php-8.3.30/php-8.3.30-macos-arm64.tar.gz"
+          }
+        },
+        "8.3.33": {
+          "arm64": {
+            "sha256": "f15ad700a8413dd097879bafa23a07a9f58778a4fc2686e3fdf691b63f602c9c",
+            "size": 48662016,
+            "url": "https://github.com/karajanchang/bitl-php-builds/releases/download/php-8.3.33/php-8.3.33-macos-arm64.tar.gz"
           }
         }
       }
