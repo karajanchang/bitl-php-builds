@@ -9,6 +9,7 @@ filter
 gd
 iconv
 intl
+ldap
 mbregex
 mbstring
 mysqlnd
