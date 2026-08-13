@@ -34,6 +34,10 @@ jobs:
           chmod +x spc
 
       - name: Download sources
+        env:
+          # spc queries the GitHub API for nearly every dependency; unauthenticated
+          # requests hit the rate limit and 403 mid-download.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           EXTENSIONS=$(cat config/extensions.txt | tr '\n' ',' | sed 's/,$//')
           ./spc download --with-php=${{ env.PHP_VERSION }} --for-extensions="${EXTENSIONS}"
