@@ -89,8 +89,15 @@
       }
     },
     "8.4": {
-      "latest": "8.4.3",
+      "latest": "8.4.24",
       "releases": {
+        "8.4.24": {
+          "arm64": {
+            "sha256": "f42d14f0c1af4e4dbb2a44611ade8b4f5907979504d9126dbaf5413ce3827543",
+            "size": 49924503,
+            "url": "https://github.com/karajanchang/bitl-php-builds/releases/download/php-8.4.24/php-8.4.24-macos-arm64.tar.gz"
+          }
+        },
         "8.4.3": {
           "arm64": {
             "sha256": "6c52f87b1c1ec1653884c2d5667d11f3ea6256f0acb038ec6b04a7bec0f9251e",
