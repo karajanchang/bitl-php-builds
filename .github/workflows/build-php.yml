@@ -35,6 +35,10 @@ jobs:
           tar -xzf spc.tar.gz
           chmod +x spc
 
+      # GitHub's macOS images no longer ship autoconf; let spc install what it needs.
+      - name: Install build tools
+        run: ./spc doctor --auto-fix
+
       - name: Download sources
         env:
           # spc queries the GitHub API for nearly every dependency; unauthenticated
