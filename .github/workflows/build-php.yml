@@ -21,6 +21,9 @@ jobs:
           - os: macos-13
             arch: x86_64
     runs-on: ${{ matrix.os }}
+    # softprops/action-gh-release needs write access to create the release.
+    permissions:
+      contents: write
     env:
       PHP_VERSION: ${{ inputs.php_version || '8.4.3' }}
     steps:
