@@ -12,6 +12,8 @@ on:
 jobs:
   build:
     strategy:
+      # Let each arch report its own result instead of cancelling its sibling.
+      fail-fast: false
       matrix:
         include:
           - os: macos-14
@@ -40,12 +42,23 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           EXTENSIONS=$(cat config/extensions.txt | tr '\n' ',' | sed 's/,$//')
-          ./spc download --with-php=${{ env.PHP_VERSION }} --for-extensions="${EXTENSIONS}"
+          # spc scrapes the openldap release dir for the newest tarball; 2.7.0 broke
+          # its 2.6-era build patches, so pin until spc supports it.
+          ./spc download --with-php=${{ env.PHP_VERSION }} --for-extensions="${EXTENSIONS}" \
+            -U "ldap:https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.14.tgz"
 
       - name: Build PHP
         run: |
           EXTENSIONS=$(cat config/extensions.txt | tr '\n' ',' | sed 's/,$//')
-          ./spc build --build-cli --build-fpm "${EXTENSIONS}"
+          ./spc build --build-cli --build-fpm --debug "${EXTENSIONS}"
+
+      - name: Upload spc logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: spc-logs-${{ matrix.arch }}
+          path: log/
+          if-no-files-found: ignore
 
       - name: Package binaries
         run: |
